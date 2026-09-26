@@ -1,5 +1,5 @@
 const { invoke } = window.__TAURI__.core;
-
+import Split from 'split.js'
 let greetInputEl;
 let greetMsgEl;
 
@@ -9,10 +9,8 @@ async function greet() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  greetInputEl = document.querySelector("#greet-input");
-  greetMsgEl = document.querySelector("#greet-msg");
-  document.querySelector("#greet-form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    greet();
-  });
+  // using ES6 modules
+
+
+  console.log(Split)
 });

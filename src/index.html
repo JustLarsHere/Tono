@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tono</title>
+
     <script type="module" src="/main.js" defer></script>
   </head>
   <body>
-    <nav>
+    <nav data-tauri-drag-region>
       <section id="current">
         <div id="name" class="big">My Playlist</div>
         <div class="icon">
@@ -18,7 +19,7 @@
       </section>
       <section id="playlist">
         <div id="info">
-          <p class="">3 Tracks</p>
+          <p class="subtext">3 Tracks</p>
           <p class="">Date</p>
         </div>
         <div id="items">
@@ -49,8 +50,8 @@
         </div>
       </section>
     </nav>
-    <main>
-      <div id="cover"></div>
+    <main data-tauri-drag-region>
+      <div id="cover" data-tauri-drag-region></div>
       <div id="cover_background"></div>
     </main>
   </body>
