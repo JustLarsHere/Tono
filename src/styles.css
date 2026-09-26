@@ -112,11 +112,6 @@ nav > * {
   justify-content: space-between;
 }
 
-.track_options {
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
 .track:hover .track_options {
   opacity: 1;
 }

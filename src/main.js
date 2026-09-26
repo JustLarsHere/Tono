@@ -1,15 +1,13 @@
 const { invoke } = window.__TAURI__.core;
 import Split from 'split.js'
-let greetInputEl;
-let greetMsgEl;
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
 
-async function greet() {
-  // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-  greetMsgEl.textContent = await invoke("greet", { name: greetInputEl.value });
-}
+
+
+
 
 window.addEventListener("DOMContentLoaded", () => {
-
   // resizable sidebar
   // TODO: Consider coding this ourselves for a smoother experience
   let split = Split(['nav', 'main'], {
@@ -19,4 +17,12 @@ window.addEventListener("DOMContentLoaded", () => {
     snapOffset: 0,
     dragInterval: 0
   });
+
+  tippy('#test', {
+    content: 'Hello!',
+    duration: 0,
+    arrow: false,
+    delay: [1000, 200],
+  });
 });
+document.addEventListener("contextmenu", e => e.preventDefault());
