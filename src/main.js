@@ -12,5 +12,11 @@ window.addEventListener("DOMContentLoaded", () => {
   // using ES6 modules
 
 
-  console.log(Split)
+  Split(['nav', 'main'], {
+    sizes: [20, 80],
+    minSize: [250, 300], //250
+    gutterSize: 4,
+    snapOffset: 0,
+    dragInterval: 0
+  });
 });
