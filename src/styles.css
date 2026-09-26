@@ -1,3 +1,4 @@
+/* Root and Window */
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -32,6 +33,7 @@ body {
   flex-direction: row;
 }
 
+/* Sidebar */
 nav {
   background: transparent;
   display: flex;
@@ -73,6 +75,8 @@ nav > * {
   background: rgb(217 217 217 / 0.06);
   border-radius: 4px;
   padding: 0.75rem;
+  padding-right: 1.2rem;
+  padding-left: 1.2rem;
 }
 #items > *:first-child {
   border-top-right-radius: 10px;
@@ -96,7 +100,7 @@ nav > * {
 }
 .track_info {
   white-space: nowrap;
-  min-width: 0px;
+  min-width: 0;
   overflow: hidden;
   mask-image: linear-gradient(to right, black 80%, transparent);
   width: 100%;
@@ -108,23 +112,27 @@ nav > * {
   justify-content: space-between;
 }
 
-
-.big {
-  font-size: 18px;
-  color: rgb(255 255 255 / 0.77);
+.track_options {
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
-.semibig {
-  font-size: 16px;
-  color: rgb(255 255 255 / 0.77);
+.track:hover .track_options {
+  opacity: 1;
 }
 
-.subtext {
-  font-size: 12px;
-  color: rgb(255 255 255 / 0.34);
+#playlist_name {
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+#playlist_name:focus {
+  outline: 2px solid rgb(255 255 255 / 0.2);
+  border-radius: 5px;
 }
 
-
+/* Main */
 main {
   height: 100%;
   width: 100%;
@@ -137,7 +145,7 @@ main {
 
 #cover_background {
   position: absolute;
-  inset: 0px;
+  inset: 0;
   background-image: url("https://cdn-images.dzcdn.net/images/cover/73a3aa5b14085f49a12e092db8b488e4/0x1900-000000-80-0-0.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -159,14 +167,61 @@ main {
   border-radius: 20px;
 }
 
+/* decorators */
+.icon_button {
+  scale: 1;
+  transition: 0.2s;
+  cursor: pointer;
+  color: rgb(255 255 255 / 0.59);
+}
+.icon_button:hover {
+  scale: 1.1;
+  cursor: pointer;
+  color: rgb(255 255 255 / 0.85);
+}
+.icon_button:active {
+  scale: 0.8;
+  color: rgb(255 255 255);
+}
 
+.button {
+  scale:1;
+  transition: 0.2s;
+  color: rgb(255 255 255 / 0.59);
+}
+.button:hover {
+  cursor: pointer;
+  scale: 1.05;
+  color: rgb(255 255 255 / 0.85);
+}
+.button:active {
+  scale: 0.9;
+  color: rgb(255 255 255);
+}
+
+.big {
+  font-size: 18px;
+  color: rgb(255 255 255 / 0.77);
+}
+.semibig {
+  font-size: 16px;
+  color: rgb(255 255 255 / 0.77);
+}
+.subtext {
+  font-size: 12px;
+}
+.faded {
+  color: rgb(255 255 255 / 0.4);
+}
+
+/* slider */
 .gutter {
   background: #313131;
   cursor: col-resize;
-  transition: 1s;
-  width: 4px !important;
+  transition: 0.33s;
+  width: 0.25rem !important;
 }
 .gutter:hover, .gutter:active {
   background: #535353;
-  width: 10px !important;
+  width: 0.625rem !important;
 }

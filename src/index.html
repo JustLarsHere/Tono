@@ -12,41 +12,45 @@
   <body>
     <nav data-tauri-drag-region>
       <section id="current">
-        <div id="name" class="big">My Playlist</div>
+        <div id="playlist_name" class="big" contenteditable="plaintext-only">My Playlist</div>
         <div class="icon">
-          <span class="material-symbols-outlined">keyboard_arrow_down</span>
+          <span class="icon_button material-symbols-outlined">keyboard_arrow_down</span>
         </div>
       </section>
       <section id="playlist">
         <div id="info">
-          <p class="subtext">3 Tracks</p>
-          <p class="">Date</p>
+          <p class="faded subtext">3 Tracks</p>
+          <p class="faded subtext">04/10/2026</p>
         </div>
         <div id="items">
-          <div class="track">
+          <div class="track button">
             <div class="track_info">
               <div id="track_name" class="semibig">The Conflict of The mind</div>
-              <div id="track_author" class="subtext">AURORA</div>
+              <div id="track_author" class="subtext faded">AURORA</div>
             </div>
-            <div id="track_options">delete</div>
+            <div class="track_options">
+              <span class="icon_button material-symbols-outlined"> more_horiz </span>
+            </div>
           </div>
           <!-- remove track below after -->
-          <div class="track">
+          <div class="track button">
             <div class="track_info">
               <div id="track_name" class="semibig">The Conflict of The mind</div>
-              <div id="track_author" class="subtext">AURORA</div>
+              <div id="track_author" class="subtext faded">AURORA</div>
             </div>
-            <div id="track_options">delete</div>
+            <div class="track_options">
+              <span class="icon_button material-symbols-outlined"> more_horiz </span>
+            </div>
           </div>
-          <div id="add">+ Add Track</div>
+          <div class="button" id="add">+ Add Track</div>
         </div>
       </section>
       <section id="more">
         <div class="settings">
-          <span class="material-symbols-outlined">settings</span>
+          <span class="icon_button material-symbols-outlined">settings</span>
         </div>
         <div class="help">
-          <span class="material-symbols-outlined">question_mark</span>
+          <span class="icon_button material-symbols-outlined">question_mark</span>
         </div>
       </section>
     </nav>

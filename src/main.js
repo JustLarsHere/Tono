@@ -9,13 +9,13 @@ async function greet() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  // using ES6 modules
 
-
-  Split(['nav', 'main'], {
+  // resizable sidebar
+  // TODO: Consider coding this ourselves for a smoother experience
+  let split = Split(['nav', 'main'], {
     sizes: [20, 80],
     minSize: [250, 300], //250
-    gutterSize: 4,
+    gutterSize: 10,
     snapOffset: 0,
     dragInterval: 0
   });
