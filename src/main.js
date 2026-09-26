@@ -26,3 +26,18 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 document.addEventListener("contextmenu", e => e.preventDefault());
+import { getSystemFonts } from "tauri-plugin-system-fonts-api";
+
+async function loadFonts() {
+  try {
+    // Returns an array of strings containing font names
+    const fonts = await getSystemFonts();
+    console.log("Installed fonts:");
+    for (const font of fonts) {
+      console.log(font.fontName)
+    }
+  } catch (error) {
+    console.error("Failed to fetch system fonts:", error);
+  }
+}
+loadFonts();
