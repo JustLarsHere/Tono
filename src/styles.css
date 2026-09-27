@@ -129,13 +129,43 @@ nav > * {
 
 /* Main */
 main {
-  height: 100%;
-  width: 100%;
   overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 1.5rem;
+  padding-bottom: 2rem;
+  color: white;
+}
+
+#options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#playback {
+  display: flex;
+  flex-direction: row;
+}
+
+#track_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.trackinfo {
+  display: flex;
+  flex-direction: row;
 }
 
 #cover_background {

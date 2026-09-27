@@ -5,7 +5,7 @@ import 'tippy.js/dist/tippy.css';
 
 
 
-
+let instance;
 
 window.addEventListener("DOMContentLoaded", () => {
   // resizable sidebar
@@ -18,14 +18,20 @@ window.addEventListener("DOMContentLoaded", () => {
     dragInterval: 0
   });
 
-  tippy('#test', {
-    content: 'Hello!',
+  instance=tippy('#test', {
+    content: 'test',
     duration: 0,
-    arrow: false,
+    arrow: true,
     delay: [1000, 200],
+    placement: 'bottom',
+    interactive: true,
+    appendTo: () => document.body
   });
 });
-document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("contextmenu", e => {
+  e.preventDefault();
+  instance?.show();
+});
 import { getSystemFonts } from "tauri-plugin-system-fonts-api";
 
 async function loadFonts() {
@@ -34,10 +40,26 @@ async function loadFonts() {
     const fonts = await getSystemFonts();
     console.log("Installed fonts:");
     for (const font of fonts) {
-      console.log(font.fontName)
     }
   } catch (error) {
     console.error("Failed to fetch system fonts:", error);
   }
 }
 loadFonts();
+
+import { getCurrentWindow } from '@tauri-apps/api/window';
+
+
+async function show() {
+  const appWindow = getCurrentWindow();
+
+  await appWindow.setDecorations(true);
+}
+async function hide() {
+  const appWindow = getCurrentWindow();
+
+  await appWindow.setDecorations(false);
+
+}
+window.show = show;
+window.hide = hide;
