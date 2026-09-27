@@ -2,12 +2,22 @@
   "$schema": "../gen/schemas/desktop-schema.json",
   "identifier": "default",
   "description": "Capability for the main window",
-  "windows": ["main"],
+  "windows": [
+    "main"
+  ],
   "permissions": [
     "core:default",
     "opener:default",
     "core:window:allow-start-dragging",
     "system-fonts:default",
-    "core:window:allow-set-decorations"
+    "core:window:allow-set-decorations",
+    "fs:default",
+    {
+      "identifier": "fs:allow-read-dir",
+      "allow": [
+        { "path": "$HOME/.config" },
+        { "path": "$HOME/.config/**" }
+      ]
+    }
   ]
 }

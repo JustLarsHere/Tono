@@ -1,4 +1,4 @@
-/* Root and Window */
+ /* Root and Window */
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -21,17 +21,18 @@
   -ms-user-select: none;
 }
 
-body, html {
+body,
+html {
   width: 100%;
   height: 100%;
 }
 
-
 body {
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
   display: flex;
   flex-direction: row;
 }
+
 
 /* Sidebar */
 nav {
@@ -43,51 +44,55 @@ nav {
   color: white;
   gap: 1.5rem;
 }
+
 nav > * {
 
 }
-#current {
+
+#sidebar_header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-#playlist {
+#sidebar_playlist {
   display: flex;
   flex-direction: column;
   height: 100%;
   gap: 0.75rem;
 }
 
-#playlist > #info {
+#sidebar_playlist > #sidebar_playlist_metadata {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-#items {
+#sidebar_track_list {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-#items > * {
+#sidebar_track_list > * {
   background: rgb(217 217 217 / 0.06);
   border-radius: 4px;
   padding: 0.75rem;
   padding-right: 1.2rem;
   padding-left: 1.2rem;
 }
-#items > *:first-child {
+
+#sidebar_track_list > *:first-child {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
-#items > *:last-child {
+
+#sidebar_track_list > *:last-child {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
-#add {
+#sidebar_add_track {
   display: flex;
   justify-content: center;
 }
@@ -98,6 +103,7 @@ nav > * {
   align-items: center;
   justify-content: space-between;
 }
+
 .track_info {
   white-space: nowrap;
   min-width: 0;
@@ -106,7 +112,7 @@ nav > * {
   width: 100%;
 }
 
-#more {
+#sidebar_footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -116,18 +122,20 @@ nav > * {
   opacity: 1;
 }
 
-#playlist_name {
+#sidebar_playlist_title {
   white-space: nowrap;
   overflow: hidden;
   display: flex;
   align-items: center;
 }
-#playlist_name:focus {
+
+#sidebar_playlist_title:focus {
   outline: 2px solid rgb(255 255 255 / 0.2);
   border-radius: 5px;
 }
 
-/* Main */
+
+/* Main / Player */
 main {
   overflow: hidden;
   position: relative;
@@ -136,39 +144,70 @@ main {
   justify-content: space-between;
   flex-direction: column;
   padding: 1.5rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   color: white;
+  width: 100%;
 }
 
-#options {
+#player_window_controls {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
 }
 
-#controls {
+.window_controls_left {
+  display: flex;
+  flex-direction: row;
+}
+
+.window_controls_right {
+  display: flex;
+  flex-direction: row;
+}
+
+#player_controls {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 80%;
 }
 
-#playback {
+#player_playback_controls {
   display: flex;
   flex-direction: row;
 }
 
-#track_info {
+#player_track_metadata {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
-.trackinfo {
+.player_track_details {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
-#cover_background {
+.player_progress_track {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  border-radius: 4px;
+  height: 0.4rem;
+  background: rgb(255 255 255 / 0.22);
+  overflow: hidden;
+}
+
+.player_progress {
+  background: white;
+  width: 20%;
+  height: 100%;
+}
+
+#player_album_art_background {
   position: absolute;
   inset: 0;
   background-image: url("https://cdn-images.dzcdn.net/images/cover/73a3aa5b14085f49a12e092db8b488e4/0x1900-000000-80-0-0.jpg");
@@ -181,72 +220,82 @@ main {
   user-select: none;
 }
 
-#cover {
+#player_album_art {
   background-image: url("https://cdn-images.dzcdn.net/images/cover/73a3aa5b14085f49a12e092db8b488e4/0x1900-000000-80-0-0.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  aspect-ratio: 1/1;
-  width: 15.625rem;
-  height: 15.625rem;
+  aspect-ratio: 1 / 1;
+  min-width: 15.625rem;
   border-radius: 20px;
 }
 
-/* decorators */
+
+/* Decorators */
 .icon_button {
   scale: 1;
   transition: 0.2s;
   cursor: pointer;
   color: rgb(255 255 255 / 0.59);
 }
+
 .icon_button:hover {
   scale: 1.1;
   cursor: pointer;
   color: rgb(255 255 255 / 0.85);
 }
+
 .icon_button:active {
   scale: 0.8;
   color: rgb(255 255 255);
 }
 
 .button {
-  scale:1;
+  scale: 1;
   transition: 0.2s;
   color: rgb(255 255 255 / 0.59);
 }
+
 .button:hover {
   cursor: pointer;
   scale: 1.05;
   color: rgb(255 255 255 / 0.85);
 }
+
 .button:active {
   scale: 0.9;
   color: rgb(255 255 255);
 }
 
-.big {
+.text_large {
   font-size: 18px;
   color: rgb(255 255 255 / 0.77);
 }
-.semibig {
+
+.text_medium {
   font-size: 16px;
   color: rgb(255 255 255 / 0.77);
 }
-.subtext {
+
+.text_small {
   font-size: 12px;
 }
-.faded {
+
+.text_muted {
   color: rgb(255 255 255 / 0.4);
 }
 
-/* slider */
+
+/* Slider */
 .gutter {
-  background: #313131;
+  background: transparent;
   cursor: col-resize;
   transition: 0.33s;
   width: 0.25rem !important;
 }
-.gutter:hover, .gutter:active {
+
+.gutter:hover,
+.gutter:active {
   background: #535353;
   width: 0.625rem !important;
 }
