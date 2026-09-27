@@ -9,4 +9,13 @@ Tono is an extension based music player for Desktop.
 > Users add third party content providers at their own risk and discretion
 
 ### Platforms
-Tono is only focused towards desktop applications (Linux, Windows, Macos), therefore a version for Android or iPhone does not exist and will not be made.
+Tono is only focused towards desktop systems (peimarily Linux, Windows and MacOS), therefore versions for Android or iPhone do not exist and will not be made.
+
+### Plugins
+Tono allows you to add tracks from third party providers. This is achieved via plugins. To use a plugin you find, simply drag and drop it into the Tono window, or paste the plugin's repo url.
+
+### Developing Plugins
+You can develop Plugins for Tono by following the simple docs [here](). Tono provides the built-in plugin api for the following programming languages:
+- JavaScript
+- Rust
+
