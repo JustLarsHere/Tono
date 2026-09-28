@@ -1,10 +1,13 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
+    root: "src",
+    build: {
+        outDir: "../dist",
+    },
     server: {
         watch: {
             ignored: ["**/src-tauri/**"],
         },
     },
-    root: "src"
 });
