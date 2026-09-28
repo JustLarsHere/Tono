@@ -18,7 +18,6 @@ await mkdir(PLUGIN_FOLDER, {
 });
 
 
-console.log(await getPlugins(PLUGIN_FOLDER, META_FILE_NAME, JS_FILE_NAME));
 
 
 async function getPlugins (PLUGIN_FOLDER, META_FILE_NAME, JS_FILE_NAME) {
@@ -61,9 +60,18 @@ async function getPlugins (PLUGIN_FOLDER, META_FILE_NAME, JS_FILE_NAME) {
 function getPlugin(name) {
 
 }
+console.log(await getPlugins(PLUGIN_FOLDER, META_FILE_NAME, JS_FILE_NAME));
 
 
+// If tauri loads the document before script
+if (document.readyState === 'complete') init()
 window.addEventListener("DOMContentLoaded", () => {
+  init()
+
+});
+
+function init() {
+
   let split = Split(['nav', 'main'], {
     sizes: [20, 80],
     minSize: [250, 300],
@@ -72,7 +80,7 @@ window.addEventListener("DOMContentLoaded", () => {
     dragInterval: 0
   });
 
-});
+}
 
 document.addEventListener("contextmenu", e => {
   e.preventDefault();
