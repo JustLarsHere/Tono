@@ -17,5 +17,8 @@
     "split.js": "^1.6.5",
     "tauri-plugin-system-fonts-api": "^2.0.2",
     "tippy.js": "^6.3.7"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
   }
 }
